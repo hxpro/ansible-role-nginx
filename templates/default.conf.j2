@@ -14,7 +14,7 @@ server {
         try_files $uri =404;
         include fastcgi.conf;
         fastcgi_index index.php;
-        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_pass {{ phpfpm_default_listen | default('127.0.0.1:9000') }};
     }
 
     location / {
