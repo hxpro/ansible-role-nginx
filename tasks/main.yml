@@ -26,6 +26,7 @@
     dest=/etc/nginx/acme_snippet.conf
   when: le_payload_root is defined
   notify: reload nginx
+  register: nginx_acme_snippet
 
 - name: Start/enable nginx service
   service: name=nginx enabled=yes state=started  
