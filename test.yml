@@ -25,6 +25,7 @@
   roles:
     - role: "{{ playbook_dir }}"
   tasks:
+    - file: path=/var/www/html state=directory
     - copy:
         content='<?php PHPInfo();'
         dest='/var/www/html/index.php'
