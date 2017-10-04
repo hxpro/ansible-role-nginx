@@ -26,6 +26,7 @@
     - role: "{{ playbook_dir }}"
       nginx_ipv6: False
   tasks:
+    - file: path=/var/www/html state=directory
     - copy:
         content='<?php PHPInfo();'
         dest='/var/www/html/index.php'
