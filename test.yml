@@ -24,6 +24,7 @@
   connection: docker
   roles:
     - role: "{{ playbook_dir }}"
+      nginx_ipv6: False
   tasks:
     - copy:
         content='<?php PHPInfo();'

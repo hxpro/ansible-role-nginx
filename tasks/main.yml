@@ -1,4 +1,11 @@
 ---
+- name: Check IPv6
+  assert:
+    that:
+      - (ansible_all_ipv6_addresses is defined and ansible_all_ipv6_addresses|length>0)
+    msg: "Check your ipv6 configuration"
+  when: nginx_ipv6
+
 - name: Install nginx
   package: name=nginx state=latest
 

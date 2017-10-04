@@ -20,6 +20,7 @@ Role Variables
 ```
 nginx_worker_connections: 1024
 nginx_client_max_body_size: 1m
+nginx_ipv6: False
 ```
 
 Dependencies
