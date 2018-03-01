@@ -13,4 +13,8 @@ galaxy_info:
 
   galaxy_tags: []
 
-dependencies: []
+dependencies:
+  - name: hxpro.epel
+    src: hxpro.epel
+    when: ansible_os_family == 'RedHat'
+
