@@ -3,8 +3,7 @@ hxpro.nginx
 
 [![Build Status](https://travis-ci.org/hxpro/ansible-role-nginx.svg?branch=master)](https://travis-ci.org/hxpro/ansible-role-nginx)
 
-Nginx configuration to use with php-fpm.
-This role is under development.
+Nginx - this role is under development.
 
 Requirements
 ------------
@@ -21,13 +20,21 @@ Role Variables
 nginx_worker_connections: 1024
 nginx_client_max_body_size: 1m
 nginx_ipv6: False
+nginx_server_tokens: "on" [ "off", "build" ]
+nginx_modules:
+  - /usr/share/nginx/modules/mod-http-geoip.conf
+  - /usr/share/nginx/modules/mod-http-image-filter.conf
+  - /usr/share/nginx/modules/mod-http-perl.conf
+  - /usr/share/nginx/modules/mod-http-xslt-filter.conf
+  - /usr/share/nginx/modules/mod-mail.conf
+  - /usr/share/nginx/modules/mod-stream.conf
+nginx_default_root: /var/www/html
 ```
 
 Dependencies
 ------------
 
  - hxpro.epel
- - hxpro.phpfpm
 
 
 Example Playbook
