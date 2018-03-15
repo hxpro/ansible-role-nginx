@@ -39,7 +39,7 @@
 
 - file:
     path: "{{ item }}"
-    state: touch
+    state: file
   with_items: "{{ nginx_modules }}"
 
 - name: Start/enable nginx service
