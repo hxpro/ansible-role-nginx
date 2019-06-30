@@ -25,6 +25,10 @@ http {
 
     access_log  /var/log/nginx/access.log  main;
 
+{% for header in nginx_http_header %}
+    add_header {{ header.name }} {{ header.value | quote }}{% if header.always is defined and header.always is sameas true %} always{% endif %};
+{% endfor %}
+
     server_tokens       {{ nginx_server_tokens }};
     sendfile            on;
     tcp_nopush          on;
@@ -33,12 +37,14 @@ http {
     types_hash_max_size 2048;
 
     fastcgi_buffering off;
+    fastcgi_request_buffering off;
     fastcgi_read_timeout 3600s;
     fastcgi_send_timeout 3600s;
 
     client_max_body_size {{ nginx_client_max_body_size }};
 
     gzip                on;
+    # Internet Explorer 6 does support gzip
     gzip_disable        "msie6";
     gzip_types {{ nginx_gzip_types | join(' ') }};
 
