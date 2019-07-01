@@ -25,3 +25,4 @@ nginx_gzip_types:
   - application/xml+rss
   - application/xhtml+xml
   - application/rss+xml
+nginx_http_header: []
