@@ -4,6 +4,11 @@
     name: nginx
     state: latest
 
+- name: Install nginx modules
+  package:
+    name: "nginx-mod-{{ item }}"
+  with_items: "{{ nginx_modules }}"
+
 - name: Start/enable nginx service
   service:
     name: nginx

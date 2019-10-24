@@ -9,7 +9,7 @@
 
 - name: Check config files for modules
   file:
-    path: "{{ item }}"
+    path: "/usr/share/nginx/modules/mod-{{ item }}.conf"
     state: file
   with_items: "{{ nginx_modules }}"
 

@@ -5,12 +5,11 @@ nginx_ipv6: False
 # on (default), off, build
 nginx_server_tokens: "on"
 nginx_modules:
-  - /usr/share/nginx/modules/mod-http-geoip.conf
-  - /usr/share/nginx/modules/mod-http-image-filter.conf
-  - /usr/share/nginx/modules/mod-http-perl.conf
-  - /usr/share/nginx/modules/mod-http-xslt-filter.conf
-  - /usr/share/nginx/modules/mod-mail.conf
-  - /usr/share/nginx/modules/mod-stream.conf
+  - http-image-filter
+  - http-perl
+  - http-xslt-filter
+  - mail
+  - stream
 nginx_default_root: /var/www/html
 nginx_default_conf: True
 nginx_gzip_types:
