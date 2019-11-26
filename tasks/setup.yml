@@ -6,8 +6,10 @@
 
 - name: Install nginx modules
   package:
-    name: "nginx-mod-{{ item }}"
+    name: "nginx-mod-{{ nginx_module_name }}"
   with_items: "{{ nginx_modules }}"
+  loop_control:
+    loop_var: nginx_module_name
 
 - name: Start/enable nginx service
   service:

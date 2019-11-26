@@ -9,9 +9,11 @@
 
 - name: Check config files for modules
   file:
-    path: "/usr/share/nginx/modules/mod-{{ item }}.conf"
+    path: "/usr/share/nginx/modules/mod-{{ nginx_module_name }}.conf"
     state: file
   with_items: "{{ nginx_modules }}"
+  loop_control:
+    loop_var: nginx_module_name
 
 - name: Nginx config
   template:
