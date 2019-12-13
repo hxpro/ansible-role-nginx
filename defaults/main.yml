@@ -25,3 +25,5 @@ nginx_gzip_types:
   - application/xhtml+xml
   - application/rss+xml
 nginx_http_header: []
+# Default value should be True, False for backward compatibility
+nginx_fastcgi_request_buffering: False

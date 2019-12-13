@@ -37,7 +37,7 @@ http {
     types_hash_max_size 2048;
 
     fastcgi_buffering off;
-    fastcgi_request_buffering off;
+    fastcgi_request_buffering {{ nginx_fastcgi_request_buffering | ternary("on", "off") }};
     fastcgi_read_timeout 3600s;
     fastcgi_send_timeout 3600s;
 
