@@ -2,7 +2,7 @@
 - name: Install nginx
   package:
     name: nginx
-    state: latest
+  notify: reload nginx
 
 - name: Install nginx modules
   package:
@@ -10,9 +10,3 @@
   with_items: "{{ nginx_modules }}"
   loop_control:
     loop_var: nginx_module_name
-
-- name: Start/enable nginx service
-  service:
-    name: nginx
-    enabled: yes
-    state: started  

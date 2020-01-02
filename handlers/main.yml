@@ -3,6 +3,14 @@
   command: nginx -t
   listen: reload nginx
 
+- name: start nginx service
+  systemd:
+    name: nginx
+    state: started
+  listen: reload nginx
+
 - name: reload nginx service
-  service: name=nginx state=reloaded
+  systemd:
+    name: nginx
+    state: reloaded
   listen: reload nginx
