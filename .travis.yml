@@ -19,7 +19,7 @@ install:
   - ansible-galaxy install hxpro.phpfpm
 
 script:
-  - molecule test
+  - ansible-playbook test.yml
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
