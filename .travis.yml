@@ -3,6 +3,7 @@ language: python
 python:
   - "2.7"
   - "3.7"
+  - "3.9"
 
 services:
   - docker
@@ -13,7 +14,7 @@ addons:
     - python-pip
 
 install:
-  - pip install ansible molecule[docker]
+  - pip install ansible molecule[docker] ansible-lint pytest-flake8 pytest-testinfra
 
 script:
   - molecule test

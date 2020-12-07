@@ -1,5 +1,6 @@
 galaxy_info:
   author: Matěj Koudelka
+  role_name: nginx
   description: Nginx
 
   license: license (WTFPL)
