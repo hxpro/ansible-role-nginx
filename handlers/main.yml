@@ -6,6 +6,7 @@
 - name: start nginx service
   systemd:
     name: nginx
+    enabled: yes
     state: started
   listen: reload nginx
 
