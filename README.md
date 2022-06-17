@@ -45,6 +45,9 @@ nginx_gzip_types:
 nginx_http_header: []
 # Default value should be True, False for backward compatibility
 nginx_fastcgi_request_buffering: False
+nginx_log_format:
+  main: $remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" - $request_time X-Forwarded-For=$http_x_forwarded_for Host=$host
+nginx_default_access_log_format: combined
 ```
 
 Dependencies
